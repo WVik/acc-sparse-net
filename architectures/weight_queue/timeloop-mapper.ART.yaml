@@ -2,7 +2,7 @@ ART:
   version: 0.3
   tables:
   - name: system.scnn.PE[0..63].weight_fifo
-    area: 81.60015
+    area: 72.14594
   - name: system.scnn.PE[0..63].mac
     area: 1239.5
   - name: system.scnn.DummyBuffer[0..7]

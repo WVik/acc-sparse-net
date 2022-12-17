@@ -4,11 +4,11 @@ ERT_summary:
   - name: system.scnn.PE[0..63].weight_fifo
     actions:
     - name: push
-      energy: 0.09904
+      energy: 0.09512
     - name: pop
-      energy: 0.09904
+      energy: 0.09512
     - name: idle
-      energy: 0.00374
+      energy: 0.00372
     primitive_estimation(s):
     - name: system.scnn.PE[0..63].weight_fifo
       estimator: Aladdin_table

@@ -2,7 +2,7 @@ ART_summary:
   version: 0.3
   table_summary:
   - name: system.scnn.PE[0..63].weight_fifo
-    area: 81.60015
+    area: 72.14594
     primitive_estimations: Aladdin_table
   - name: system.scnn.PE[0..63].mac
     area: 1239.5

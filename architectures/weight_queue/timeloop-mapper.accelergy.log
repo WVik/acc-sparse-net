@@ -11,10 +11,11 @@ Info: generating outputs according to the following specified output flags...
 Info: config file located: /home/workspace/.config/accelergy/accelergy_config.yaml 
 config file content: 
  {'version': 0.3, 'compound_components': [], 'estimator_plug_ins': ['/usr/local/share/accelergy/estimation_plug_ins'], 'primitive_components': ['/usr/local/share/accelergy/primitive_component_libs'], 'table_plug_ins': {'roots': ['/usr/local/share/accelergy/estimation_plug_ins/accelergy-table-based-plug-ins/set_of_table_templates']}}
+Warn: Cannot recognize the top key "architecture_constraints" in file constraints/weight_queue_arch_constraints.yaml 
+Warn: Cannot recognize the top key "mapspace_constraints" in file constraints/weight_queue_map_constraints.yaml 
 Warn: Cannot recognize the top key "mapper" in file mapper/mapper.yaml 
-Warn: Cannot recognize the top key "architecture_constraints" in file constraints/scnn_arch_constraints.yaml 
-Warn: Cannot recognize the top key "mapspace_constraints" in file constraints/scnn_map_constraints.yaml 
 Warn: Cannot recognize the top key "problem" in file prob/prob.yaml 
+Warn: Cannot recognize the top key "sparse_optimizations" in file sparse-opt/sparse_optimizations.yaml 
 Info: Parsing file arch/weight_queue.yaml for architecture info 
 Info: Found non-numeric expression 45nm. Available bindings: {'technology': '45nm'} 
 WARN: Failed to evaluate "45nm". Setting system.scnn.technology="45nm". Available bindings: {'technology': '45nm'}
@@ -26,8 +27,8 @@ Info: Parsing file arch/components/smartbuffer_metadata.yaml for compound_compon
 Info: primitive component file parsed:  /usr/local/share/accelergy/primitive_component_libs/primitive_component.lib.yaml 
 Info: primitive component file parsed:  /usr/local/share/accelergy/primitive_component_libs/soc_primitives.lib.yaml 
 Info: primitive component file parsed:  /usr/local/share/accelergy/primitive_component_libs/pim_primitive_component.lib.yaml 
-Info: Found non-numeric expression 5ns. Available bindings: {'depth': 1000, 'datawidth': 10, 'meshX': 8, 'technology': '45nm', 'latency': '5ns'} 
-WARN: Failed to evaluate "5ns". Setting system.scnn.PE[0..63].weight_fifo.latency="5ns". Available bindings: {'depth': 1000, 'datawidth': 10, 'meshX': 8, 'technology': '45nm', 'latency': '5ns'}
+Info: Found non-numeric expression 5ns. Available bindings: {'depth': 50, 'datawidth': 10, 'meshX': 8, 'technology': '45nm', 'latency': '5ns'} 
+WARN: Failed to evaluate "5ns". Setting system.scnn.PE[0..63].weight_fifo.latency="5ns". Available bindings: {'depth': 50, 'datawidth': 10, 'meshX': 8, 'technology': '45nm', 'latency': '5ns'}
 Info: Found non-numeric expression 65nm. Available bindings: {'type': 'LPDDR4', 'width': 64, 'block-size': 4, 'word-bits': 16, 'technology': '65nm'} 
 WARN: Failed to evaluate "65nm". Setting system.DRAM.technology="65nm". Available bindings: {'type': 'LPDDR4', 'width': 64, 'block-size': 4, 'word-bits': 16, 'technology': '65nm'}
 Info: estimator plug-in identified by:  /usr/local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti.estimator.yaml 

@@ -6,7 +6,7 @@ architecture:
     subclass: FIFO
     attributes:
       datawidth: 10
-      depth: 1000
+      depth: 50
       latency: 5ns
       meshX: 8
       technology: 45nm

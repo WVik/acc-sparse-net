@@ -5,13 +5,13 @@ ERT:
     actions:
     - name: push
       arguments: null
-      energy: 0.09904
+      energy: 0.09512
     - name: pop
       arguments: null
-      energy: 0.09904
+      energy: 0.09512
     - name: idle
       arguments: null
-      energy: 0.00374
+      energy: 0.00372
   - name: system.scnn.PE[0..63].mac
     actions:
     - name: mac_random

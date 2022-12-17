@@ -24,7 +24,7 @@ Level 1
     SPECS
     -----
         Technology           : SRAM
-        Size                 : 50
+        Size                 : 1000
         Word bits            : 10
         Block size           : 1
         Cluster size         : 1
@@ -33,10 +33,10 @@ Level 1
         Read bandwidth       : -
         Write bandwidth      : -
         Multiple buffering   : 1.00
-        Effective size       : 50
+        Effective size       : 1000
         Min utilization      : 0.00
         Vector access energy : 0.10 pJ
-        Area                 : 72.15 um^2
+        Area                 : 81.60 um^2
 
     MAPPING
     -------
@@ -44,7 +44,7 @@ Level 1
       for Q in [0:56)
         for P in [0:56)
           for R in [0:3)
-            for C in [0:2)
+            for C in [0:32)
 
     STATS
     -----
@@ -52,7 +52,7 @@ Level 1
     Bandwidth throttling : 1.00
     Weights:
         Partition size                           : 6144
-        Utilized capacity                        : 6
+        Utilized capacity                        : 96
         Utilized instances (max)                 : 48
         Utilized clusters (max)                  : 48
         Scalar reads (per-instance)              : 19267584
@@ -60,9 +60,9 @@ Level 1
         Scalar fills (per-instance)              : 6144
         Temporal reductions (per-instance)       : 0
         Address generations (per-cluster)        : 19273728
-        Energy (per-scalar-access)               : 0.61 pJ
-        Energy (per-instance)                    : 11780361.12 pJ
-        Energy (total)                           : 565457333.97 pJ
+        Energy (per-scalar-access)               : 0.65 pJ
+        Energy (per-instance)                    : 12482343.69 pJ
+        Energy (total)                           : 599152497.29 pJ
         Temporal Reduction Energy (per-instance) : 0.00 pJ
         Temporal Reduction Energy (total)        : 0.00 pJ
         Address Generation Energy (per-cluster)  : 0.00 pJ
@@ -98,7 +98,7 @@ Level 2
     MAPPING
     -------
     Loop nest:
-      for C in [0:2) (Spatial-Y)
+      for M in [0:2) (Spatial-Y)
         for S in [0:3) (Spatial-Y)
 
     STATS
@@ -131,9 +131,8 @@ Level 3
     -------
     Loop nest:
       for M in [0:64)
-        for C in [0:16)
-          for M in [0:4) (Spatial-X)
-            for C in [0:2) (Spatial-X)
+        for M in [0:2) (Spatial-X)
+          for C in [0:4) (Spatial-X)
 
     STATS
     -----
@@ -245,12 +244,12 @@ DRAM <==> DummyBuffer
     Inputs:
         Fanout                                  : 8
         Fanout (distributed)                    : 0
-        Multicast factor                        : 4
+        Multicast factor                        : 2
         Ingresses                               : 231211008.00
-            @multicast 4 @scatter 2: 231211008.00
+            @multicast 2 @scatter 4: 231211008.00
         Link transfers                          : 0
         Spatial reductions                      : 0
-        Average number of hops                  : 5.16
+        Average number of hops                  : 3.21
         Energy (per-hop)                        : 0.00 fJ
         Energy (per-instance)                   : 0.00 pJ
         Energy (total)                          : 0.00 pJ
@@ -261,12 +260,12 @@ DRAM <==> DummyBuffer
     Outputs:
         Fanout                                  : 8
         Fanout (distributed)                    : 0
-        Multicast factor                        : 2
+        Multicast factor                        : 4
         Ingresses                               : 153337856.00
-            @multicast 2 @scatter 4: 153337856.00
+            @multicast 4 @scatter 2: 153337856.00
         Link transfers                          : 0
-        Spatial reductions                      : 153337856
-        Average number of hops                  : 3.21
+        Spatial reductions                      : 460013568
+        Average number of hops                  : 5.16
         Energy (per-hop)                        : 0.00 fJ
         Energy (per-instance)                   : 0.00 pJ
         Energy (total)                          : 0.00 pJ
@@ -309,12 +308,12 @@ DummyBuffer <==> weight_fifo
     Inputs:
         Fanout                                  : 6
         Fanout (distributed)                    : 0
-        Multicast factor                        : 1
-        Ingresses                               : 115605504.00
-            @multicast 1 @scatter 6: 115605504.00
+        Multicast factor                        : 2
+        Ingresses                               : 57802752.00
+            @multicast 2 @scatter 3: 57802752.00
         Link transfers                          : 0
         Spatial reductions                      : 0
-        Average number of hops                  : 1.22
+        Average number of hops                  : 2.75
         Energy (per-hop)                        : 0.00 fJ
         Energy (per-instance)                   : 0.00 pJ
         Energy (total)                          : 0.00 pJ
@@ -325,12 +324,12 @@ DummyBuffer <==> weight_fifo
     Outputs:
         Fanout                                  : 6
         Fanout (distributed)                    : 0
-        Multicast factor                        : 6
-        Ingresses                               : 19267584.00
-            @multicast 6 @scatter 1: 19267584.00
+        Multicast factor                        : 3
+        Ingresses                               : 38535168.00
+            @multicast 3 @scatter 2: 38535168.00
         Link transfers                          : 0
-        Spatial reductions                      : 96337920
-        Average number of hops                  : 5.50
+        Spatial reductions                      : 77070336
+        Average number of hops                  : 3.69
         Energy (per-hop)                        : 0.00 fJ
         Energy (per-instance)                   : 0.00 pJ
         Energy (total)                          : 0.00 pJ
@@ -426,18 +425,18 @@ Summary Stats
 GFLOPs (@1GHz): 95.96
 Utilization: 0.75
 Cycles: 19267584
-Energy: 51860.44 uJ
-EDP(J*cycle): 9.99e+05
+Energy: 51894.14 uJ
+EDP(J*cycle): 1.00e+06
 Area: 0.09 mm^2
 
 Computes = 924844032
 pJ/Compute
     mac                          = 2.20
-    weight_fifo                  = 0.61
+    weight_fifo                  = 0.65
     DummyBuffer                  = 0.00
     DRAM                         = 53.26
     DRAM <==> DummyBuffer        = 0.00
     DummyBuffer <==> weight_fifo = 0.00
     weight_fifo <==> mac         = 0.00
-    Total                        = 56.07
+    Total                        = 56.11
 
