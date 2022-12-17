@@ -1,0 +1,27 @@
+compound_components:
+  version: 0.3
+  classes:
+    - name: array_mac
+      attributes:
+        technology: must_specify
+        datawidth: must_specify
+      subcomponents:
+        - name: multiplier
+          class: intmultiplier
+          attributes:
+            technology: technology
+            datawidth: datawidth
+        - name: adder
+          class: intadder
+          attributes:
+            technology: technology
+            datawidth: datawidth
+      actions:
+        - name: mac_random
+          subcomponents:
+            - name: multiplier
+              actions:
+                - name: multiply_random
+            - name: adder
+              actions:
+                - name: add

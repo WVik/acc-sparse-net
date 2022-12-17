@@ -1,0 +1,76 @@
+architecture:
+  # ============================================================
+  # Architecture Description
+  # ============================================================
+  version: 0.3
+  subtree:
+    - name: system
+      local:
+        - name: DRAM
+          class: DRAM
+          attributes:
+            type: LPDDR4
+            width: 64
+            block-size: 4
+            word-bits: 16
+      subtree:
+        - name: scnn
+          attributes:
+            technology: 45nm
+          local:
+                  #- name: shared_glb
+                  #  class: smartbuffer_SRAM
+                  #  attributes:
+                  #    memory_depth: 16384
+                  #    memory_width: 64
+                  #    n_banks: 32
+                  #    block-size: 4
+                  #    word-bits: 16
+                  #    read_bandwidth: 16
+                  #    write_bandwidth: 16
+            - name: DummyBuffer[0..7] # for better mapping
+              class: regfile
+              attributes:
+                depth: 16
+                width: 16
+                word-bits: 16
+                block-size: 1
+                meshX: 8
+          subtree:
+          - name: PE[0..63]
+            local:
+              - name: weight_fifo
+                class: storage
+                subclass: FIFO
+                attributes:
+                  depth: 50
+                  datawidth: 10
+                  meshX: 8
+              - name: adder_tree
+                class: ReductionTree
+                subclass: AdderTree
+                attributes:
+                  word-bits: 24
+                  meshX: 8
+              - name: accumulator_bank
+                class: storage
+                subclass: smartbuffer_SRAM
+                attributes:
+                  memory_depth: 32
+                  memory_width: 24
+                  word-bits: 24
+                  network_result: adder_tree
+                  meshX: 8
+              - name: multiplier
+                class: compute
+                subclass: intmultiplier
+                attributes:
+                  datawidth: 16
+                  network_result: accumulator_bank
+                  meshX: 8
+              - name: mac
+                class: compute
+                subclass: intmac
+                attributes:
+                  datawidth: 16
+                  meshX : 8

@@ -1,0 +1,53 @@
+ERT_summary:
+  version: 0.3
+  table_summary:
+  - name: system.scnn.PE[0..63].weight_fifo
+    actions:
+    - name: push
+      energy: 0.09512
+    - name: pop
+      energy: 0.09512
+    - name: idle
+      energy: 0.00372
+    primitive_estimation(s):
+    - name: system.scnn.PE[0..63].weight_fifo
+      estimator: Aladdin_table
+  - name: system.scnn.PE[0..63].mac
+    actions:
+    - name: mac_random
+      energy: 2.20035
+    - name: mac_reused
+      energy: 1.87673
+    - name: mac_gated
+      energy: 0.10285
+    - name: idle
+      energy: 0.06595
+    primitive_estimation(s):
+    - name: system.scnn.PE[0..63].mac
+      estimator: Aladdin_table
+  - name: system.scnn.DummyBuffer[0..7]
+    actions:
+    - name: read
+      average_energy: 0.10409
+      max_energy: 0.20203
+      min_energy: 0.00616
+    - name: write
+      average_energy: 0.10409
+      max_energy: 0.20203
+      min_energy: 0.00616
+    - name: idle
+      energy: 0.00616
+    primitive_estimation(s):
+    - name: system.scnn.DummyBuffer[0..7]
+      estimator: Aladdin_table
+  - name: system.DRAM
+    actions:
+    - name: read
+      energy: 512
+    - name: write
+      energy: 512
+    - name: idle
+      energy: 0
+    primitive_estimation(s):
+    - name: system.DRAM
+      estimator: Cacti

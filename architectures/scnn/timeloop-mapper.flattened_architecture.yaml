@@ -1,0 +1,40 @@
+architecture:
+  version: 0.3
+  local:
+  - name: system.scnn.PE[0..63].weight_fifo
+    class: storage
+    subclass: FIFO
+    attributes:
+      datawidth: 10
+      depth: 50
+      latency: 5ns
+      meshX: 8
+      technology: 45nm
+  - name: system.scnn.PE[0..63].mac
+    class: compute
+    subclass: intmac
+    attributes:
+      datawidth: 16
+      latency: 5ns
+      meshX: 8
+      num_pipeline_stages: 2
+      technology: 45nm
+  - name: system.scnn.DummyBuffer[0..7]
+    class: regfile
+    attributes:
+      block-size: 1
+      depth: 16
+      latency: 5ns
+      meshX: 8
+      n_ports: 2
+      technology: 45nm
+      width: 16
+      word-bits: 16
+  - name: system.DRAM
+    class: DRAM
+    attributes:
+      block-size: 4
+      technology: 65nm
+      type: LPDDR4
+      width: 64
+      word-bits: 16

@@ -1,0 +1,46 @@
+mapping:
+  - target: weight_fifo
+    type: datatype
+    keep:
+      - Weights
+    bypass:
+      - Inputs
+      - Outputs
+  - target: DummyBuffer
+    type: datatype
+    keep:
+      []
+    bypass:
+      - Weights
+      - Inputs
+      - Outputs
+  - target: DRAM
+    type: datatype
+    keep:
+      - Weights
+      - Inputs
+      - Outputs
+    bypass:
+      []
+  - target: weight_fifo
+    type: temporal
+    factors: C2 M1 R3 S1 N1 P56 Q56
+    permutation: CRPQMSN
+  - target: DummyBuffer
+    type: spatial
+    factors: C2 M1 R1 S3 N1 P1 Q1
+    permutation: SCMRNPQ
+    split: 0
+  - target: DummyBuffer
+    type: temporal
+    factors: C1 M1 R1 S1 N1 P1 Q1
+    permutation: CMRSNPQ
+  - target: DRAM
+    type: spatial
+    factors: C2 M4 R1 S1 N1 P1 Q1
+    permutation: CMRSNPQ
+    split: 2
+  - target: DRAM
+    type: temporal
+    factors: C16 M64 R1 S1 N1 P1 Q1
+    permutation: CMRSNPQ

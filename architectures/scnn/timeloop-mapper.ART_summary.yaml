@@ -1,0 +1,15 @@
+ART_summary:
+  version: 0.3
+  table_summary:
+  - name: system.scnn.PE[0..63].weight_fifo
+    area: 72.14594
+    primitive_estimations: Aladdin_table
+  - name: system.scnn.PE[0..63].mac
+    area: 1239.5
+    primitive_estimations: Aladdin_table
+  - name: system.scnn.DummyBuffer[0..7]
+    area: 235.68
+    primitive_estimations: Aladdin_table
+  - name: system.DRAM
+    area: 0
+    primitive_estimations: Cacti

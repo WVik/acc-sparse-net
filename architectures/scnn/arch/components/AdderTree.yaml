@@ -1,0 +1,10 @@
+compound_components:
+  version: 0.3
+  classes:
+    - name: AdderTree
+      attributes:
+        technology: 45nm
+        latency: 1ns
+        datawidth: 24
+      subcomponents:
+
