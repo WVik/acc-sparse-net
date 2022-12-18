@@ -9,3 +9,7 @@ ART:
     area: 235.68
   - name: system.DRAM
     area: 0
+  - name: system.scnn.PE[0..63].iaram
+    area: 1067929.0
+  - name: system.scnn.PE[0..63].oaram
+    area: 1067929.0

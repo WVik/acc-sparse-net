@@ -29,6 +29,26 @@ architecture:
           subtree:
           - name: PE[0..63]
             local:
+              - name: iaram
+                class: smartbuffer_SRAM
+                attributes:
+                  memory_depth: 80000
+                  memory_width: 16
+                  block-size: 1
+                  word-bits: 16
+                  read_bandwidth: 2
+                  write_bandwidth: 2
+                  meshX: 8
+              - name: oaram
+                class: smartbuffer_SRAM
+                attributes:
+                  memory_depth: 80000
+                  memory_width: 16
+                  block-size: 1
+                  word-bits: 16
+                  read_bandwidth: 2
+                  write_bandwidth: 2
+                  meshX: 8
               - name: weight_fifo
                 class: storage
                 subclass: FIFO

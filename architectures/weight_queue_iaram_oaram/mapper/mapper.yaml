@@ -6,3 +6,4 @@ mapper:
   victory-condition: 500
   algorithm: random-pruned
   max-permutations-per-if-visit: 16
+  diagnostics: False # fails to find valid mappings if diagnostics is off apparently ?

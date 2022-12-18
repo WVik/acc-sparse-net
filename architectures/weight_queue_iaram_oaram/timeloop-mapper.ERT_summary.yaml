@@ -51,3 +51,45 @@ ERT_summary:
     primitive_estimation(s):
     - name: system.DRAM
       estimator: Cacti
+  - name: system.scnn.PE[0..63].iaram
+    actions:
+    - name: write
+      average_energy: 13.13499
+      max_energy: 26.2126
+      min_energy: 0.05738
+    - name: read
+      average_energy: 17.05809
+      max_energy: 34.0588
+      min_energy: 0.05738
+    - name: idle
+      energy: 0.02048
+    primitive_estimation(s):
+    - name: storage
+      estimator: Cacti
+    - name: address_generators[0]
+      estimator: Aladdin_table
+    - name: address_generators[1]
+      estimator: Aladdin_table
+    - name: address_generators[0..1]
+      estimator: Aladdin_table
+  - name: system.scnn.PE[0..63].oaram
+    actions:
+    - name: write
+      average_energy: 13.13499
+      max_energy: 26.2126
+      min_energy: 0.05738
+    - name: read
+      average_energy: 17.05809
+      max_energy: 34.0588
+      min_energy: 0.05738
+    - name: idle
+      energy: 0.02048
+    primitive_estimation(s):
+    - name: storage
+      estimator: Cacti
+    - name: address_generators[0]
+      estimator: Aladdin_table
+    - name: address_generators[1]
+      estimator: Aladdin_table
+    - name: address_generators[0..1]
+      estimator: Aladdin_table

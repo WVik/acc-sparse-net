@@ -1,0 +1,174 @@
+ERT:
+  version: 0.3
+  tables:
+  - name: system.scnn.PE[0..63].weight_fifo
+    actions:
+    - name: push
+      arguments: null
+      energy: 0.09512
+    - name: pop
+      arguments: null
+      energy: 0.09512
+    - name: idle
+      arguments: null
+      energy: 0.00372
+  - name: system.scnn.PE[0..63].mac
+    actions:
+    - name: mac_random
+      arguments: null
+      energy: 2.20035
+    - name: mac_reused
+      arguments: null
+      energy: 1.87673
+    - name: mac_gated
+      arguments: null
+      energy: 0.10285
+    - name: idle
+      arguments: null
+      energy: 0.06595
+  - name: system.scnn.DummyBuffer[0..7]
+    actions:
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.00616
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.14424
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.06395
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.20203
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.00616
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 0.14424
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 0.06395
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 0.20203
+    - name: idle
+      arguments: null
+      energy: 0.00616
+  - name: system.DRAM
+    actions:
+    - name: read
+      arguments: null
+      energy: 512
+    - name: write
+      arguments: null
+      energy: 512
+    - name: idle
+      arguments: null
+      energy: 0
+  - name: system.scnn.PE[0..63].iaram
+    actions:
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.05738
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 18.36603
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 7.90395
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 26.2126
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.05738
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 23.85837
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 10.25781
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 34.0588
+    - name: idle
+      arguments: null
+      energy: 0.02048
+  - name: system.scnn.PE[0..63].oaram
+    actions:
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.05738
+    - name: write
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 18.36603
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 7.90395
+    - name: write
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 26.2126
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 0
+      energy: 0.05738
+    - name: read
+      arguments:
+        address_delta: 0
+        data_delta: 1
+      energy: 23.85837
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 0
+      energy: 10.25781
+    - name: read
+      arguments:
+        address_delta: 1
+        data_delta: 1
+      energy: 34.0588
+    - name: idle
+      arguments: null
+      energy: 0.02048

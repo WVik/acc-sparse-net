@@ -1,0 +1,33 @@
+
+DRAM [ Weights:294912 (294912) Inputs:430592 (430592) Outputs:802816 (802816) ] 
+-------------------------------------------------------------------------------
+| for Q in [0:7)
+|   for M in [0:8)
+|     for Q in [0:2) (Spatial-X)
+|       for M in [0:2) (Spatial-X)
+|         for C in [0:2) (Spatial-X)
+
+DummyBuffer [ ] 
+---------------
+|           for Q in [0:1)
+|             for C in [0:2) (Spatial-Y)
+|               for S in [0:3) (Spatial-Y)
+
+iaram [ Inputs:7424 (7424) ] 
+----------------------------
+|                 for P in [0:2)
+|                   for C in [0:16)
+|                     for R in [0:3)
+
+oaram [ Outputs:1792 (1792) ] 
+-----------------------------
+|                       for M in [0:8)
+|                         for P in [0:7)
+
+weight_fifo [ Weights:4 (4) ] 
+-----------------------------
+|                           for Q in [0:4)
+|                             for P in [0:4)
+|                               for M in [0:2)
+|                                 for C in [0:2)
+

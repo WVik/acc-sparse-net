@@ -12,6 +12,14 @@ architecture_constraints:
     type: bypass
     bypass: [Inputs, Outputs]
     keep: [Weights]
+  - target: iaram
+    type: bypass
+    bypass: [Outputs, Weights]
+    keep: [Inputs]
+  - target: oaram
+    type: bypass
+    bypass: [Inputs, Weights]
+    keep: [Outputs]
   - target: DummyBuffer
     type: spatial
     split: 4

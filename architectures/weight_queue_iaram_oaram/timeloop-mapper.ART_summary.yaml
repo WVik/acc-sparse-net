@@ -13,3 +13,17 @@ ART_summary:
   - name: system.DRAM
     area: 0
     primitive_estimations: Cacti
+  - name: system.scnn.PE[0..63].iaram
+    area: 1067929.0
+    primitive_estimations:
+    - name: storage
+      estimator: Cacti
+    - name: address_generators[0..1]
+      estimator: Aladdin_table
+  - name: system.scnn.PE[0..63].oaram
+    area: 1067929.0
+    primitive_estimations:
+    - name: storage
+      estimator: Cacti
+    - name: address_generators[0..1]
+      estimator: Aladdin_table

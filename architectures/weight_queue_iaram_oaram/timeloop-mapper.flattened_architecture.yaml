@@ -1,6 +1,34 @@
 architecture:
   version: 0.3
   local:
+  - name: system.scnn.PE[0..63].iaram
+    class: smartbuffer_SRAM
+    attributes:
+      block-size: 1
+      memory_depth: 80000
+      memory_width: 16
+      meshX: 8
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      read_bandwidth: 2
+      technology: 45nm
+      word-bits: 16
+      write_bandwidth: 2
+  - name: system.scnn.PE[0..63].oaram
+    class: smartbuffer_SRAM
+    attributes:
+      block-size: 1
+      memory_depth: 80000
+      memory_width: 16
+      meshX: 8
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      read_bandwidth: 2
+      technology: 45nm
+      word-bits: 16
+      write_bandwidth: 2
   - name: system.scnn.PE[0..63].weight_fifo
     class: storage
     subclass: FIFO
