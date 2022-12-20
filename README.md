@@ -8,7 +8,7 @@ The objective of this project is to replicate the simulated implementation of an
 
 # Repository structure
 The repository is fairly simply organized. The main folder is called `architecture`, in which there are three subfolders, each for one architecture. 
-* eyerissv2_simple: This folder contains an example implementation of the eyerissv2 architecture from the Accelergy-Project/timeloop-accelergy-exercises repository. The paper for this accelerator is linked here.
+* eyerissv2_simple: This folder contains an example implementation of the eyerissv2 architecture from the `Accelergy-Project/timeloop-accelergy-exercises` [repository](https://github.com/Accelergy-Project/timeloop-accelergy-exercises). The paper for this accelerator is linked here.
 * scnn: This contains some unfinished work on evaluating the SCNN architecture. We attempted to model the multiplier array and accumulator buffers but were not successful in implementing the required components within the time frame of the project. This direction of the project can be extended later. 
 * weight_queue_iaram_oaram: This directory contains the main experimental portion of our project, in which we modeled the portions of the SCNN architecture that we could within the time frame of the project; the design in the directory contains a weight queue, an input activation RAM, and an output activation RAM. 
 
